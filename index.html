@@ -17,6 +17,9 @@
     <link rel="stylesheet" href="css/tooplate-style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
     
+    <!-- EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    
 <!--
 
 
@@ -123,7 +126,7 @@ I’m Ekhlas, a passionate Software Engineer and Full Stack Developer focused on
                       <div class="owl-carousel owl-theme">
                         <div class="item">
                           <div class="project-info">
-                            <a href="https://amazon-evangadi.netlify.app/" target="_blank" rel="noopener">
+                            <a href="http://amazon-clone.ekhlasabdulmelik.com/" target="_blank" rel="noopener">
                               <img src="images/project/Amazon.jpg" class="img-fluid project-thumb" alt="Amazon clone project">
                             </a>
                           </div>
@@ -131,7 +134,7 @@ I’m Ekhlas, a passionate Software Engineer and Full Stack Developer focused on
 
                         <div class="item">
                           <div class="project-info">
-                            <a href="https://ekhl-movie.netlify.app/" target="_blank" rel="noopener">
+                            <a href="http://netflix-clone.ekhlasabdulmelik.com/" target="_blank" rel="noopener">
                               <img src="images/project/Netflix.jpg" class="img-fluid project-thumb" alt="Netflix clone project">
                             </a>
                           </div>
@@ -147,7 +150,7 @@ I’m Ekhlas, a passionate Software Engineer and Full Stack Developer focused on
 
                         <div class="item">
                           <div class="project-info">
-                            <a href="https://ekhl-react.netlify.app/" target="_blank" rel="noopener">
+                            <a href="http://apple-clone.ekhlasabdulmelik.com/" target="_blank" rel="noopener">
                               <img src="images/project/Apple-Logo.png" class="img-fluid project-thumb" alt="Apple landing project">
                             </a>
                           </div>
@@ -210,16 +213,7 @@ Worked on backend systems during hackathons and collaborative projects, developi
                             </div>
                         </div>
 
-                        <div class="timeline-wrapper">
-                            <div class="timeline-yr">
-                                <span>2023</span>
-                            </div>
-                            <div class="timeline-info">
-                                <h3><span>Web Developer<small>Bookstore & Hotel Management Systems</small></h3>
-                                <p>Developed full-stack web applications using HTML, CSS, JavaScript, PHP, and MySQL.
-Implemented CRUD functionalities, authentication systems, and responsive layouts for improved user interaction and administrative control.</p>
-                            </div>
-                        </div>
+                        
 
                         <div class="timeline-wrapper">
                             <div class="timeline-yr">
@@ -334,12 +328,7 @@ Gained practical knowledge in programming logic, app architecture, and mobile de
                   <p><i class='uil uil-envelope'></i> <a href="mailto:ekhlasabdulmelik@gmail.com">ekhlasabdulmelik@gmail.com</a></p>
                 </div>
 
-                <!-- <ul class="social-links">
-                     <li><a href="https://github.com/Ekhlas61" class="uil uil-github" target="_blank" rel="noopener" data-toggle="tooltip" data-placement="left" title="GitHub"></a></li>
-                     <li><a href="https://www.linkedin.com/in/ekhlas-abdulmelik-850b43309" class="uil uil-linkedin" target="_blank" rel="noopener" data-toggle="tooltip" data-placement="left" title="LinkedIn"></a></li>
-                     <li><a href="tel:+251996684747" class="uil uil-phone" data-toggle="tooltip" data-placement="left" title="Call"></a></li>
-                     <li><a href="mailto:ekhlasabdulmelik@gmail.com" class="uil uil-envelope" data-toggle="tooltip" data-placement="left" title="Email"></a></li>
-                </ul> -->
+               
 
                 <ul class="social-links">
   <li>
@@ -371,22 +360,31 @@ Gained practical knowledge in programming logic, app architecture, and mobile de
             <div class="contact-form">
               <h2 class="mb-4">Interested to work together? Let's talk</h2>
 
-              <form action="" method="get">
+              <form id="contact-form" method="post">
                 <div class="row">
                   <div class="col-lg-6 col-12">
-                    <input type="text" class="form-control" name="name" placeholder="Your Name" id="name">
+                    <input type="text" class="form-control" name="name" placeholder="Your Name" id="name" required>
                   </div>
 
                   <div class="col-lg-6 col-12">
-                    <input type="email" class="form-control" name="email" placeholder="Email" id="email">
+                    <input type="email" class="form-control" name="email" placeholder="Email" id="email" required>
                   </div>
 
                   <div class="col-12">
-                    <textarea name="message" rows="6" class="form-control" id="message" placeholder="Message"></textarea>
+                    <textarea name="message" rows="6" class="form-control" id="message" placeholder="Message" required></textarea>
+                  </div>
+
+                  <div class="col-12">
+                    <div id="form-message" class="alert" style="display: none;"></div>
                   </div>
 
                   <div class="ml-lg-auto col-lg-5 col-12">
-                    <input type="submit" class="form-control submit-btn" value="Send Button">
+                    <button type="submit" class="form-control submit-btn" id="send-btn">
+                      <span id="btn-text">Send</span>
+                      <span id="btn-loading" style="display: none;">
+                        <i class="fa fa-spinner fa-spin"></i> Sending...
+                      </span>
+                    </button>
                   </div>
                 </div>
               </form>
